@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Weather extends AppCompatActivity {
-    TextView weatherdate, weathertemp1, weather_temp2, weathercity, description1,feelslike;
+    TextView weathertemp1, weather_temp2, weathercity, description1,feelslike,weatherdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,6 @@ public class Weather extends AppCompatActivity {
                     JSONObject first_object = weather_array.getJSONObject(0);
                     String description = first_object.getString("description");
                     String city = response.getString("name");
-                //    weathertemp1.setText(temp);
                     weathercity.setText(city);
                     description1.setText(description);
                     feelslike.setText(feels_like);
