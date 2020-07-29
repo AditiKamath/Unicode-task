@@ -7,4 +7,10 @@
     <color name="circleBorder">#50FFFFFF</color>
     <color name="gradEnd">#67EFC8</color>
     <color name="gradStart">#63C9FF</color>
+    <!-- gradient color -->
+
+    <color name="startcolor">#006797</color>
+    <color name="endcolor">#489855</color>
+    <color name="centercolor">#006797</color>
+    <color name="userrow">#403fc68b</color>
 </resources>
