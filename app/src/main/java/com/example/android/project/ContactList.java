@@ -4,20 +4,20 @@ import java.io.Serializable;
 public class ContactList implements Serializable {
    private String contactEmail;
     private String contactName;
-    private String phone;
+    private String phoneNumber;
     private String photo;
 
-    public ContactList(String contactName,String phone,String contactEmail,String photo) {
+   public ContactList(String contactName,String phone,String contactEmail,String photo) {
         this.contactName = contactName;
-        this.phone = phone;
+        this.phoneNumber = phone;
         this.contactEmail = contactEmail;
         this.photo = photo;
     }
 
     public ContactList(String contactName, String phone,String photo) {
         this.contactName = contactName;
-        this.phone = phone;
-       this.contactEmail = contactEmail;
+        this.phoneNumber = phone;
+     //  this.contactEmail = contactEmail;
         this.photo = photo;
         ///  this.id = id;
     }
@@ -30,12 +30,12 @@ public class ContactList implements Serializable {
         this.contactName = contactName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phone) {
+        this.phoneNumber = phone;
     }
     public String getContactEmail() {
         return contactEmail;
@@ -50,7 +50,7 @@ public class ContactList implements Serializable {
     }
 
     public void setPhoto(String photo) {
-        this.phone = photo;
+        this.photo = photo;
     }
 
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context=".ContactDetails">
 
     <LinearLayout
@@ -19,7 +20,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="bottom">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_pic"
             android:layout_gravity="bottom"
            android:layout_marginBottom="30dp"
@@ -30,9 +31,10 @@
             android:src="@drawable/profile_pic" />
 
         <TextView
-            android:id="@+id/nameTxt"
+            android:id="@+id/name_detail"
             android:layout_gravity="bottom"
             android:textSize="24sp"
+            android:textColor="#000000"
             android:layout_marginBottom="30dp"
             android:layout_width="match_parent"
             android:layout_height="30sp"
@@ -54,10 +56,11 @@
                 android:layout_height="80dp"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/numberTxt"
+                    android:id="@+id/number_detail"
                     android:layout_width="0dp"
                     android:layout_weight="4"
                     android:textSize="24sp"
+                    android:textColor="#000000"
                     android:layout_marginLeft="8dp"
                     android:layout_height="match_parent"
                     tools:text="Contact Number" />
@@ -76,10 +79,11 @@
 
             </LinearLayout>
             <TextView
-                android:id="@+id/emailtxt"
+                android:id="@+id/email_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="20dp"
+                android:textColor="#000000"
                 tools:text="Email id" />
 
 

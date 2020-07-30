@@ -27,6 +27,7 @@
         <activity
             android:name=".ContactDetails"
             android:label="Contact Details"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:parentActivityName=".Contact">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -35,6 +36,7 @@
         <activity
             android:name=".Contact"
             android:label="Contact List"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
