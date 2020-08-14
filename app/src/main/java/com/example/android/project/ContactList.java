@@ -7,19 +7,10 @@ public class ContactList implements Serializable {
     private String phoneNumber;
     private String photo;
 
-   public ContactList(String contactName,String phone,String contactEmail,String photo) {
-        this.contactName = contactName;
-        this.phoneNumber = phone;
-        this.contactEmail = contactEmail;
-        this.photo = photo;
-    }
-
     public ContactList(String contactName, String phone,String photo) {
         this.contactName = contactName;
         this.phoneNumber = phone;
-     //  this.contactEmail = contactEmail;
         this.photo = photo;
-        ///  this.id = id;
     }
 
     public String getContactName() {

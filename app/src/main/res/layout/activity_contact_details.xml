@@ -4,91 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
+    android:orientation="vertical"
     tools:context=".ContactDetails">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="16dp"
         android:background="@drawable/details_back"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="bottom">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_pic"
-            android:layout_gravity="bottom"
-           android:layout_marginBottom="30dp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            android:layout_marginRight="50dp"
-            android:src="@drawable/profile_pic" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_pic" />
 
-        <TextView
-            android:id="@+id/name_detail"
-            android:layout_gravity="bottom"
-            android:textSize="24sp"
-            android:textColor="#000000"
-            android:layout_marginBottom="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="30sp"
-            tools:text="Contact Name" />
+            <TextView
+                android:id="@+id/name_detail"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="30dp"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:text="Contact Name" />
         </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
-            <LinearLayout
-               android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/number_detail"
-                    android:layout_width="0dp"
-                    android:layout_weight="4"
-                    android:textSize="24sp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="8dp"
-                    android:layout_height="match_parent"
-                    tools:text="Contact Number" />
-                <ImageView
-                    android:id="@+id/call"
-                    android:layout_width="48dp"
-                    android:layout_margin="8dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/call"/>
-                <ImageView
-                    android:id="@+id/chat"
-                    android:layout_margin="8dp"
-                    android:layout_width="48dp"
-                    android:src="@drawable/chat"
-                    android:layout_height="48dp"/>
+            android:layout_height="80dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
 
-            </LinearLayout>
             <TextView
-                android:id="@+id/email_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
+                android:id="@+id/number_detail"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="4"
                 android:textColor="#000000"
-                tools:text="Email id" />
+                android:textSize="24sp"
+                tools:text="Contact Number" />
 
+            <ImageView
+                android:id="@+id/call"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/call" />
+
+            <ImageView
+                android:id="@+id/chat"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/chat" />
 
         </LinearLayout>
-
+    </LinearLayout>
 
 
 </LinearLayout>

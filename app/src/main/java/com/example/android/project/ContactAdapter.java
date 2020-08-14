@@ -21,18 +21,15 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactAdaptervh> implements Filterable {
-    // private RecyleViewCLickListener mRecycleViewListener;
     Context context;
     private List<ContactList> listOfContact;
     private List<ContactList> filteredcontactList;
     SelectedUser selectedUser;
 
     public ContactAdapter(List<ContactList> listOfContact, SelectedUser selectedUser) {
-        //   this.mContext = mContext;
         this.listOfContact = listOfContact;
         this.filteredcontactList = listOfContact;
         this.selectedUser = selectedUser;
-        //   this.mRecycleViewListener = listener;
     }
 
     @NonNull
@@ -60,6 +57,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactA
         return listOfContact.size();
     }
 
+    // search feature using filter
     @Override
     public Filter getFilter() {
         final Filter filter = new Filter() {
@@ -97,18 +95,17 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactA
         void SelectedUser(ContactList contactList);
     }
 
-
+// on item click listener for recycler view
     public class ContactAdaptervh extends RecyclerView.ViewHolder {
         private TextView name_contact, phone_contact,email_contact;
         CircleImageView image_contact;
-      //  RecyleViewCLickListener recyleViewCLickListener;
+
 
         public ContactAdaptervh(@NonNull View itemView) {
             super(itemView);
             name_contact = itemView.findViewById(R.id.name_contact);
             phone_contact = itemView.findViewById(R.id.phone_contact);
             image_contact = itemView.findViewById(R.id.image_contact);
-            email_contact = itemView.findViewById(R.id.email_detail);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -120,18 +117,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactA
 
     }
 }
-     /*   @Override
-        public void onClick(View v) {
-            recyleViewCLickListener.onClick(getAdapterPosition());
 
-        }
-
-    public interface RecyleViewCLickListener {
-        void onClick(int position);
-    }*/
-  /*  public void filterList(ArrayList<ContactList> filteredList){
-        listOfContact = filteredList;
-        notifyDataSetChanged();
-    }*/
 
 

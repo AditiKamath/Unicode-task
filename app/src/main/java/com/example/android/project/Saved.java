@@ -1,15 +1,15 @@
 package com.example.android.project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Saved extends AppCompatActivity {
-    private String nameS,emailS,dateS,contact;
-    TextView sName,sEmail,sDate,sNumber;
+    private String savedName, savedEmail, savedDate, savedNumber;
+    TextView sName, sEmail, sDate, sNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +21,16 @@ public class Saved extends AppCompatActivity {
         sDate = (TextView) findViewById(R.id.s_date);
         sNumber = (TextView) findViewById(R.id.s_number);
         SharedPreferences sp = getApplicationContext().getSharedPreferences("MyUser", Context.MODE_PRIVATE);
-        nameS = sp.getString("name","");
-        emailS = sp.getString("email","");
-        dateS = sp.getString("date","");
-        contact = sp.getString("contact","");
-        sName.setText(nameS);
-        sEmail.setText(emailS);
-        sDate.setText(dateS);
-        sNumber.setText(contact);
 
+        // retrieving data from shared preferences using key -value pairs
+        savedName = sp.getString("name", "Name : ");
+        savedEmail = sp.getString("email", "Email :");
+        savedDate = sp.getString("date", "BirthDate : ");
+        savedNumber = sp.getString("contact", "Contact Details : ");
+        sName.setText("Name : " + savedName);
+        sEmail.setText("Email Address : " + savedEmail);
+        sDate.setText("Birth Date : " + savedDate);
+        sNumber.setText("Contact Details :  " + savedNumber);
 
     }
 }

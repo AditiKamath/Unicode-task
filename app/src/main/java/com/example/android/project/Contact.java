@@ -101,15 +101,9 @@ public class Contact extends AppCompatActivity implements ContactAdapter.Selecte
                    String name = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                     String number = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                 String email = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
-               /* Cursor ce = getContentResolver().query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, null,
-                        ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = ?", new String[]{id}, null);
-                if (ce != null && ce.moveToFirst()) {
-                    email = ce.getString(ce.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
-                    ce.close();*/
                     String photoUri = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_THUMBNAIL_URI));
                     phoneCursor.moveToNext();
                     ContactList contactList = new ContactList(name, number, photoUri);
-                //    ContactList emailList = new ContactList(name,number,email,photoUri);
                     listOfContact.add(contactList);
                     adapter.notifyDataSetChanged();
                 }
@@ -128,23 +122,12 @@ public class Contact extends AppCompatActivity implements ContactAdapter.Selecte
         startActivity(new Intent(Contact.this, ContactDetails.class).putExtra("data", contactList));
 
     }
-
-    /*   @Override
-       public void onClick(int position) {
-           listOfContact.get(position);
-           Intent intent = new Intent(this, ContactDetails.class);
-           intent.putExtra("contact_name", listOfContact.get(position).getContactName());
-           intent.putExtra("contact_number", listOfContact.get(position).getPhoneNumber());
-           //    intent.putExtra("contact_email", listOfContact.get(position).getContactEmail());
-           intent.putExtra("contact_image", listOfContact.get(position).getPhoto());
-           startActivity(intent);
-       }*/
+        // search view with menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem menuItem = menu.findItem(R.id.search_view);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
-        //   SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.setMaxWidth(Integer.MAX_VALUE);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

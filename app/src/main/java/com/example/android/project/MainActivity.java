@@ -16,9 +16,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-   private  String nameStr, emailStr, dateStr, contactStr;
+    private String nameStr, emailStr, dateStr, contactStr;
     EditText nameInput, dateInput, emailInput, contactInput;
-    Button saveButton, clearButton, userButton,contactsButton,weatherButton;
+    Button saveButton, clearButton, userButton, contactsButton, weatherButton;
     SharedPreferences sp;
 
 
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         nameInput = (EditText) findViewById(R.id.name_input);
         emailInput = (EditText) findViewById(R.id.email_input);
         contactInput = (EditText) findViewById(R.id.number_input);
+
+        // shared preferences to save data
         sp = getSharedPreferences("MyUser", Context.MODE_PRIVATE);
 
         saveButton = (Button) findViewById(R.id.save_button);
@@ -40,8 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 emailStr = emailInput.getText().toString();
                 dateStr = dateInput.getText().toString();
                 contactStr = contactInput.getText().toString();
+
+                // checking for empty fields
                 if (nameStr.isEmpty() || emailStr.isEmpty() || dateStr.isEmpty() || contactStr.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Incomplete Information", Toast.LENGTH_SHORT).show();
+                }
+                // checking for valid phone numebr
+                if (contactStr.length() > 10) {
+                    Toast.makeText(MainActivity.this, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
                 } else {
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putString("name", nameStr);
@@ -63,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         contactsButton = (Button) findViewById(R.id.contact);
-       contactsButton.setOnClickListener(new View.OnClickListener() {
+        contactsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent save = new Intent(MainActivity.this, Contact.class);
@@ -71,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         clearButton = (Button) findViewById(R.id.clear_button);
+
+        // clear button to reset all the fields
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,15 +102,12 @@ public class MainActivity extends AppCompatActivity {
         weatherButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent weatherIntent = new Intent(MainActivity.this,Weather.class);
+                Intent weatherIntent = new Intent(MainActivity.this, Weather.class);
                 startActivity(weatherIntent);
             }
         });
 
     }
-   /* private void showToast(String text) {
-        Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
-    }*/
 
 
 }
